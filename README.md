@@ -29,7 +29,9 @@ a and b are the samples to be compared.
 
 a_len and b_len are the sample sizes of a and b respectively.
 
-The function sorts the arrays in place and computes the KS statistic and optionally the two-sided P value. If p_value pointer is not NULL, then the P value will be stored in the pointer.
+The function sorts the arrays in place and returns the KS statistic.
+
+If p_value pointer is not NULL, then the P value will be stored in the pointer.
 
 Example program using the library:
 
@@ -44,7 +46,7 @@ int main() {
 
 	double p;
 	double k = ks_stat(a, b, 5, 3, &p);
-	printf("%f %f\n", k, p);
+	printf("KS statistic: %f, P = %f\n", k, p);
 	return 0;
 }
 ```
